@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不织布产品 - 东莞索慕克贸易有限公司</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .product-gallery {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item-info {
+            padding: 20px;
+        }
+        
+        .gallery-item-info h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .back-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        /* 图片模态框 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90%;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: zoomIn 0.3s ease;
+        }
+        
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { transform: translateY(-50%) scale(0.8); }
+            to { transform: translateY(-50%) scale(1); }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="somuco.ico" alt="东莞索慕克贸易有限公司" style="width: 40px; height: 40px; margin-right: 10px;">
+                <div class="company-names">
+                    <h2>东莞索慕克贸易有限公司</h2>
+                    <span class="company-english">DONGGUAN SOMUCO TRADING LTD</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="index.html" data-lang-zh="首页" data-lang-en="Home">首页</a></li>
+                    <li><a href="products.html" data-lang-zh="产品" data-lang-en="Products">产品</a></li>
+                    <li><a href="about.html" data-lang-zh="关于我们" data-lang-en="About">关于我们</a></li>
+                    <li><a href="contact.html" data-lang-zh="联系我们" data-lang-en="Contact">联系我们</a></li>
+                </ul>
+                <button id="lang-toggle" class="lang-btn">EN</button>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 产品展示 -->
+    <section class="product-gallery">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span data-lang-zh="返回首页" data-lang-en="Back to Home">返回首页</span>
+            </a>
+            
+            <h1 data-lang-zh="不织布产品系列" data-lang-en="Non-woven Products Series">不织布产品系列</h1>
+            <p style="text-align: center; color: #7f8c8d; margin-bottom: 50px;" data-lang-zh="HD Non-woven，高品质不织布，提供多种规格和颜色选择" data-lang-en="HD Non-woven, high-quality non-woven fabric, providing various specifications and color options">
+                HD Non-woven，高品质不织布，提供多种规格和颜色选择
+            </p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="不织布素材/hd1.jpg" alt="不织布产品1" onclick="openModal(this.src, '不织布 - 1', 'Non-woven - 1')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 1" data-lang-en="Non-woven - 1">不织布 - 1</h3>
+                        <p data-lang-zh="HD Non-woven，高品质不织布" data-lang-en="HD Non-woven, high-quality non-woven fabric">HD Non-woven，高品质不织布</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd2.jpg" alt="不织布产品2" onclick="openModal(this.src, '不织布 - 2', 'Non-woven - 2')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 2" data-lang-en="Non-woven - 2">不织布 - 2</h3>
+                        <p data-lang-zh="高品质不织布，耐用性强" data-lang-en="High-quality non-woven fabric, strong durability">高品质不织布，耐用性强</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd3.jpg" alt="不织布产品3" onclick="openModal(this.src, '不织布 - 3', 'Non-woven - 3')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 3" data-lang-en="Non-woven - 3">不织布 - 3</h3>
+                        <p data-lang-zh="优质不织布，手感舒适" data-lang-en="Quality non-woven，comfortable feel">优质不织布，手感舒适</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd4.jpg" alt="不织布产品4" onclick="openModal(this.src, '不织布 - 4', 'Non-woven - 4')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 4" data-lang-en="Non-woven - 4">不织布 - 4</h3>
+                        <p data-lang-zh="专业不织布，应用广泛" data-lang-en="Professional non-woven，wide application">专业不织布，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd5.jpg" alt="不织布产品5" onclick="openModal(this.src, '不织布 - 5', 'Non-woven - 5')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 5" data-lang-en="Non-woven - 5">不织布 - 5</h3>
+                        <p data-lang-zh="高密度不织布，品质卓越" data-lang-en="High-density non-woven，excellent quality">高密度不织布，品质卓越</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd6.jpg" alt="不织布产品6" onclick="openModal(this.src, '不织布 - 6', 'Non-woven - 6')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 6" data-lang-en="Non-woven - 6">不织布 - 6</h3>
+                        <p data-lang-zh="优质不织布，应用广泛" data-lang-en="Quality non-woven，wide application">优质不织布，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd7.jpg" alt="不织布产品7" onclick="openModal(this.src, '不织布 - 7', 'Non-woven - 7')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 7" data-lang-en="Non-woven - 7">不织布 - 7</h3>
+                        <p data-lang-zh="专业不织布，品质卓越" data-lang-en="Professional non-woven，excellent quality">专业不织布，品质卓越</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd8.jpg" alt="不织布产品8" onclick="openModal(this.src, '不织布 - 8', 'Non-woven - 8')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 8" data-lang-en="Non-woven - 8">不织布 - 8</h3>
+                        <p data-lang-zh="高密度不织布，耐用性强" data-lang-en="High-density non-woven，strong durability">高密度不织布，耐用性强</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd9.jpg" alt="不织布产品9" onclick="openModal(this.src, '不织布 - 9', 'Non-woven - 9')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 9" data-lang-en="Non-woven - 9">不织布 - 9</h3>
+                        <p data-lang-zh="优质不织布，手感舒适" data-lang-en="Quality non-woven，comfortable feel">优质不织布，手感舒适</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd10.jpg" alt="不织布产品10" onclick="openModal(this.src, '不织布 - 10', 'Non-woven - 10')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 10" data-lang-en="Non-woven - 10">不织布 - 10</h3>
+                        <p data-lang-zh="专业不织布，应用广泛" data-lang-en="Professional non-woven，wide application">专业不织布，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd12.jpg" alt="不织布产品11" onclick="openModal(this.src, '不织布 - 11', 'Non-woven - 11')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 11" data-lang-en="Non-woven - 11">不织布 - 11</h3>
+                        <p data-lang-zh="高密度不织布，品质卓越" data-lang-en="High-density non-woven，excellent quality">高密度不织布，品质卓越</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd13.jpg" alt="不织布产品12" onclick="openModal(this.src, '不织布 - 12', 'Non-woven - 12')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 12" data-lang-en="Non-woven - 12">不织布 - 12</h3>
+                        <p data-lang-zh="优质不织布，耐用性强" data-lang-en="Quality non-woven，strong durability">优质不织布，耐用性强</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd14.jpg" alt="不织布产品13" onclick="openModal(this.src, '不织布 - 13', 'Non-woven - 13')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 13" data-lang-en="Non-woven - 13">不织布 - 13</h3>
+                        <p data-lang-zh="专业不织布，手感舒适" data-lang-en="Professional non-woven，comfortable feel">专业不织布，手感舒适</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd15.jpg" alt="不织布产品14" onclick="openModal(this.src, '不织布 - 14', 'Non-woven - 14')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 14" data-lang-en="Non-woven - 14">不织布 - 14</h3>
+                        <p data-lang-zh="高密度不织布，应用广泛" data-lang-en="High-density non-woven，wide application">高密度不织布，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd16.jpg" alt="不织布产品15" onclick="openModal(this.src, '不织布 - 15', 'Non-woven - 15')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 15" data-lang-en="Non-woven - 15">不织布 - 15</h3>
+                        <p data-lang-zh="优质不织布，品质卓越" data-lang-en="Quality non-woven，excellent quality">优质不织布，品质卓越</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd17.jpg" alt="不织布产品16" onclick="openModal(this.src, '不织布 - 16', 'Non-woven - 16')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 16" data-lang-en="Non-woven - 16">不织布 - 16</h3>
+                        <p data-lang-zh="专业不织布，耐用性强" data-lang-en="Professional non-woven，strong durability">专业不织布，耐用性强</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd18.jpg" alt="不织布产品17" onclick="openModal(this.src, '不织布 - 17', 'Non-woven - 17')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 17" data-lang-en="Non-woven - 17">不织布 - 17</h3>
+                        <p data-lang-zh="高密度不织布，手感舒适" data-lang-en="High-density non-woven，comfortable feel">高密度不织布，手感舒适</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd20.jpg" alt="不织布产品18" onclick="openModal(this.src, '不织布 - 18', 'Non-woven - 18')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 18" data-lang-en="Non-woven - 18">不织布 - 18</h3>
+                        <p data-lang-zh="优质不织布，应用广泛" data-lang-en="Quality non-woven，wide application">优质不织布，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd21.jpg" alt="不织布产品19" onclick="openModal(this.src, '不织布 - 19', 'Non-woven - 19')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 19" data-lang-en="Non-woven - 19">不织布 - 19</h3>
+                        <p data-lang-zh="专业不织布，品质卓越" data-lang-en="Professional non-woven，excellent quality">专业不织布，品质卓越</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="不织布素材/hd22.jpg" alt="不织布产品20" onclick="openModal(this.src, '不织布 - 20', 'Non-woven - 20')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="不织布 - 20" data-lang-en="Non-woven - 20">不织布 - 20</h3>
+                        <p data-lang-zh="高密度不织布，耐用性强" data-lang-en="High-density non-woven，strong durability">高密度不织布，耐用性强</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-lang-zh="东莞索慕克贸易有限公司" data-lang-en="Dongguan Somuco Trading Co., Ltd.">东莞索慕克贸易有限公司</h3>
+                    <p data-lang-zh="专业的箱包鞋材辅料产品供应商。" data-lang-en="Professional bag and shoe material accessories supplier, providing you with quality products and services.">专业的箱包鞋材辅料产品供应商。</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-zh="产品分类" data-lang-en="Product Categories">产品分类</h4>
+                    <ul>
+                        <li><a href="pu-products.html" data-lang-zh="PU产品" data-lang-en="PU Products">PU产品</a></li>
+                        <li><a href="nylon-products.html" data-lang-zh="尼龙产品" data-lang-en="Nylon Products">尼龙产品</a></li>
+                        <li><a href="zipper-products.html" data-lang-zh="拉链产品" data-lang-en="Zipper Products">拉链产品</a></li>
+                        <li><a href="ballchain-products.html" data-lang-zh="珠链产品" data-lang-en="Ball Chain Products">珠链产品</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-zh="快速链接" data-lang-en="Quick Links">快速链接</h4>
+                    <ul>
+                        <li><a href="index.html" data-lang-zh="首页" data-lang-en="Home">首页</a></li>
+                        <li><a href="products.html" data-lang-zh="产品" data-lang-en="Products">产品</a></li>
+                        <li><a href="about.html" data-lang-zh="关于我们" data-lang-en="About">关于我们</a></li>
+                        <li><a href="contact.html" data-lang-zh="联系我们" data-lang-en="Contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-zh="关注我们" data-lang-en="Follow Us">关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" title="微信"><i class="fab fa-weixin"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-zh="&copy; 2025 东莞索慕克贸易有限公司. 保留所有权利。" data-lang-en="&copy; 2025 Dongguan Somuco Trading Co., Ltd. All rights reserved.">&copy; 2025 东莞索慕克贸易有限公司. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 图片模态框 -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
+
+    <script>
+        // 图片模态框功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.close');
+            
+            // 为所有产品图片添加点击事件
+            document.querySelectorAll('.gallery-item img').forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    modalImg.src = this.src;
+                    modalImg.alt = this.alt;
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // 关闭模态框事件
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // ESC键关闭
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html> 

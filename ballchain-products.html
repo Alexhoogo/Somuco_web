@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>珠链产品 - SOHO外贸产品供应商</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .product-gallery {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item-info {
+            padding: 20px;
+        }
+        
+        .gallery-item-info h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .back-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="somuco.ico" alt="东莞索慕克贸易有限公司" style="width: 40px; height: 40px; margin-right: 10px;">
+                <div class="company-names">
+                    <h2>东莞索慕克贸易有限公司</h2>
+                    <span class="company-english">DONGGUAN SOMUCO TRADING LTD</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="index.html" data-lang-zh="首页" data-lang-en="Home">首页</a></li>
+                    <li><a href="products.html" data-lang-zh="产品" data-lang-en="Products">产品</a></li>
+                    <li><a href="about.html" data-lang-zh="关于我们" data-lang-en="About">关于我们</a></li>
+                    <li><a href="contact.html" data-lang-zh="联系我们" data-lang-en="Contact">联系我们</a></li>
+                </ul>
+                <button id="lang-toggle" class="lang-btn">EN</button>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 产品展示 -->
+    <section class="product-gallery">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span data-lang-zh="返回首页" data-lang-en="Back to Home">返回首页</span>
+            </a>
+            
+            <h1 data-lang-zh="珠链产品系列" data-lang-en="Ball Chain Products Series">珠链产品系列</h1>
+            <p style="text-align: center; color: #7f8c8d; margin-bottom: 50px;" data-lang-zh="精美珠链，时尚设计，提供多种规格和颜色选择" data-lang-en="Exquisite ball chains, fashionable design, providing various specifications and color options">
+                精美珠链，时尚设计，提供多种规格和颜色选择
+            </p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="珠链素材/ball chain.png" alt="珠链产品1" onclick="openModal(this.src, '珠链产品 - ID1', 'Ball Chain - 1')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID1" data-lang-en="Ball Chain - 1">珠链产品 - ID1</h3>
+                        <p data-lang-zh="精美珠链，时尚设计" data-lang-en="Exquisite ball chain, fashionable design">精美珠链，时尚设计</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/ball chain1.png" alt="珠链产品2" onclick="openModal(this.src, '珠链产品 - ID2', 'Ball Chain - 2')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID2" data-lang-en="Ball Chain - 2">珠链产品 - ID2</h3>
+                        <p data-lang-zh="高品质珠链，耐用性强" data-lang-en="High-quality ball chain, strong durability">高品质珠链，耐用性强</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/ball chain2.png" alt="珠链产品3" onclick="openModal(this.src, '珠链产品 - 3', 'Ball Chain - 3')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - 3" data-lang-en="Ball Chain - 3">珠链产品 - 3</h3>
+                        <p data-lang-zh="优质珠链，手感舒适" data-lang-en="Quality ball chain, comfortable feel">优质珠链，手感舒适</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/gold ball chain.png" alt="珠链产品4" onclick="openModal(this.src, '珠链产品 - ID4', 'Ball Chain - 4')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID4" data-lang-en="Ball Chain - 4">珠链产品 - ID4</h3>
+                        <p data-lang-zh="金色珠链，品质卓越" data-lang-en="Golden ball chain, excellent quality">金色珠链，品质卓越</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/gold2 ball chain.png" alt="珠链产品5" onclick="openModal(this.src, '珠链产品 - ID5', 'Ball Chain - 5')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID5" data-lang-en="Ball Chain - 5">珠链产品 - ID5</h3>
+                        <p data-lang-zh="专业珠链，应用广泛" data-lang-en="Professional ball chain, wide application">专业珠链，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/light gold ball chain.png" alt="珠链产品6" onclick="openModal(this.src, '珠链产品 - ID6', 'Ball Chain - 6')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID6" data-lang-en="Ball Chain - 6">珠链产品 - ID6</h3>
+                        <p data-lang-zh="浅金色珠链，品质保证" data-lang-en="Light golden ball chain, quality guaranteed">浅金色珠链，品质保证</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/lots ball chain.png" alt="珠链产品7" onclick="openModal(this.src, '珠链产品 - ID7', 'Ball Chain - 7')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID7" data-lang-en="Ball Chain - 7">珠链产品 - ID7</h3>
+                        <p data-lang-zh="多串珠链，满足各种需求" data-lang-en="Multiple ball chains, meets various needs">多串珠链，满足各种需求</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/lots2 ball chain.png" alt="珠链产品8" onclick="openModal(this.src, '珠链产品 - ID8', 'Ball Chain - 8')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID8" data-lang-en="Ball Chain - 8">珠链产品 - ID8</h3>
+                        <p data-lang-zh="精美珠链，工艺精湛" data-lang-en="Exquisite ball chain, exquisite craftsmanship">精美珠链，工艺精湛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/nk链.png" alt="珠链产品9" onclick="openModal(this.src, '珠链产品 - ID9', 'Ball Chain - 9')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID9" data-lang-en="Ball Chain - 9">珠链产品 - ID9</h3>
+                        <p data-lang-zh="NK系列珠链，手感舒适" data-lang-en="NK series ball chain, comfortable feel">NK系列珠链，手感舒适</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/nk链1.png" alt="珠链产品10" onclick="openModal(this.src, '珠链产品 - ID10', 'Ball Chain - 10')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID10" data-lang-en="Ball Chain - 10">珠链产品 - ID10</h3>
+                        <p data-lang-zh="NK系列珠链，应用广泛" data-lang-en="NK series ball chain, wide application">NK系列珠链，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/nk链3.png" alt="珠链产品11" onclick="openModal(this.src, '珠链产品 - ID11', 'Ball Chain - 11')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID11" data-lang-en="Ball Chain - 11">珠链产品 - ID11</h3>
+                        <p data-lang-zh="NK系列珠链，品质卓越" data-lang-en="NK series ball chain, excellent quality">NK系列珠链，品质卓越</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/sliver ball chain.png" alt="珠链产品12" onclick="openModal(this.src, '珠链产品 - ID12', 'Ball Chain - 12')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID12" data-lang-en="Ball Chain - 12">珠链产品 - ID12</h3>
+                        <p data-lang-zh="银色珠链，性价比高" data-lang-en="Silver ball chain, high cost-performance">银色珠链，性价比高</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/珠链1.png" alt="珠链产品13" onclick="openModal(this.src, '珠链产品 - ID13', 'Ball Chain - 13')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID13" data-lang-en="Ball Chain - 13">珠链产品 - ID13</h3>
+                        <p data-lang-zh="高端珠链，品质保证" data-lang-en="High-end ball chain, quality guaranteed">高端珠链，品质保证</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/珠链2.png" alt="珠链产品14" onclick="openModal(this.src, '珠链产品 - ID14', 'Ball Chain - 14')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID14" data-lang-en="Ball Chain - 14">珠链产品 - ID14</h3>
+                        <p data-lang-zh="专业珠链，满足各种需求" data-lang-en="Professional ball chain, meets various needs">专业珠链，满足各种需求</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/珠链3.png" alt="珠链产品15" onclick="openModal(this.src, '珠链产品 - ID15', 'Ball Chain - 15')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID15" data-lang-en="Ball Chain - 15">珠链产品 - ID15</h3>
+                        <p data-lang-zh="精密珠链，工艺精湛" data-lang-en="Precision ball chain, exquisite craftsmanship">精密珠链，工艺精湛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/珠链4.png" alt="珠链产品16" onclick="openModal(this.src, '珠链产品 - ID16', 'Ball Chain - 16')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID16" data-lang-en="Ball Chain - 16">珠链产品 - ID16</h3>
+                        <p data-lang-zh="优质珠链，手感舒适" data-lang-en="Quality ball chain, comfortable feel">优质珠链，手感舒适</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/珠链5.png" alt="珠链产品17" onclick="openModal(this.src, '珠链产品 - ID17', 'Ball Chain - 17')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID17" data-lang-en="Ball Chain - 17">珠链产品 - ID17</h3>
+                        <p data-lang-zh="专业珠链，应用广泛" data-lang-en="Professional ball chain, wide application">专业珠链，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/珠链6.png" alt="珠链产品18" onclick="openModal(this.src, '珠链产品 - ID18', 'Ball Chain - 18')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID18" data-lang-en="Ball Chain - 18">珠链产品 - ID18</h3>
+                        <p data-lang-zh="高密度珠链，品质卓越" data-lang-en="High-density ball chain, excellent quality">高密度珠链，品质卓越</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/珠链7.png" alt="珠链产品19" onclick="openModal(this.src, '珠链产品 - ID19', 'Ball Chain - 19')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID19" data-lang-en="Ball Chain - 19">珠链产品 - ID19</h3>
+                        <p data-lang-zh="优质珠链，性价比高" data-lang-en="Quality ball chain, high cost-performance">优质珠链，性价比高</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/珠链8.png" alt="珠链产品20" onclick="openModal(this.src, '珠链产品 - ID20', 'Ball Chain - 20')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID20" data-lang-en="Ball Chain - 20">珠链产品 - ID20</h3>
+                        <p data-lang-zh="高端珠链，品质保证" data-lang-en="High-end ball chain, quality guaranteed">高端珠链，品质保证</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/珠链9.png" alt="珠链产品21" onclick="openModal(this.src, '珠链产品 - ID21', 'Ball Chain - 21')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID21" data-lang-en="Ball Chain - 21">珠链产品 - ID21</h3>
+                        <p data-lang-zh="专业珠链，满足各种需求" data-lang-en="Professional ball chain, meets various needs">专业珠链，满足各种需求</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="珠链素材/珠链10.png" alt="珠链产品22" onclick="openModal(this.src, '珠链产品 - ID22', 'Ball Chain - 22')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="珠链产品 - ID22" data-lang-en="Ball Chain - 22">珠链产品 - ID22</h3>
+                        <p data-lang-zh="精密珠链，工艺精湛" data-lang-en="Precision ball chain, exquisite craftsmanship">精密珠链，工艺精湛</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-lang-zh="东莞索慕克贸易有限公司" data-lang-en="Dongguan Somuco Trading Co., Ltd.">东莞索慕克贸易有限公司</h3>
+                    <p data-lang-zh="专业的箱包鞋材辅料产品供应商。" data-lang-en="Professional bag and shoe material accessories supplier, providing you with quality products and services.">专业的箱包鞋材辅料产品供应商。</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-zh="产品分类" data-lang-en="Product Categories">产品分类</h4>
+                    <ul>
+                        <li><a href="pu-products.html" data-lang-zh="PU产品" data-lang-en="PU Products">PU产品</a></li>
+                        <li><a href="nylon-products.html" data-lang-zh="尼龙产品" data-lang-en="Nylon Products">尼龙产品</a></li>
+                        <li><a href="zipper-products.html" data-lang-zh="拉链产品" data-lang-en="Zipper Products">拉链产品</a></li>
+                        <li><a href="ballchain-products.html" data-lang-zh="珠链产品" data-lang-en="Ball Chain Products">珠链产品</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-zh="快速链接" data-lang-en="Quick Links">快速链接</h4>
+                    <ul>
+                        <li><a href="index.html" data-lang-zh="首页" data-lang-en="Home">首页</a></li>
+                        <li><a href="products.html" data-lang-zh="产品" data-lang-en="Products">产品</a></li>
+                        <li><a href="about.html" data-lang-zh="关于我们" data-lang-en="About">关于我们</a></li>
+                        <li><a href="contact.html" data-lang-zh="联系我们" data-lang-en="Contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-zh="关注我们" data-lang-en="Follow Us">关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" title="微信"><i class="fab fa-weixin"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-zh="&copy; 2025 东莞索慕克贸易有限公司. 保留所有权利。" data-lang-en="&copy; 2025 Dongguan Somuco Trading Co., Ltd. All rights reserved.">&copy; 2025 东莞索慕克贸易有限公司. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // 模态框功能
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+        const closeBtn = document.querySelector('.close');
+        const prevBtn = document.querySelector('.modal-prev');
+        const nextBtn = document.querySelector('.modal-next');
+        
+        let currentImageIndex = 0;
+        let images = [];
+        
+        function openModal(src, title, alt) {
+            modal.style.display = 'block';
+            modalImg.src = src;
+            modalImg.alt = alt;
+            
+            // 获取所有图片
+            images = Array.from(document.querySelectorAll('.gallery-item img'));
+            currentImageIndex = images.findIndex(img => img.src === src);
+            
+            updateNavButtons();
+        }
+        
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+        
+        function showPrevImage() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+            } else {
+                currentImageIndex = images.length - 1;
+            }
+            const img = images[currentImageIndex];
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            updateNavButtons();
+        }
+        
+        function showNextImage() {
+            if (currentImageIndex < images.length - 1) {
+                currentImageIndex++;
+            } else {
+                currentImageIndex = 0;
+            }
+            const img = images[currentImageIndex];
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            updateNavButtons();
+        }
+        
+        function updateNavButtons() {
+            prevBtn.style.display = images.length > 1 ? 'block' : 'none';
+            nextBtn.style.display = images.length > 1 ? 'block' : 'none';
+        }
+        
+        // 事件监听器
+        closeBtn.addEventListener('click', closeModal);
+        prevBtn.addEventListener('click', showPrevImage);
+        nextBtn.addEventListener('click', showNextImage);
+        
+        // 点击模态框外部关闭
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+        
+        // ESC键关闭模态框
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            } else if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (e.key === 'ArrowRight') {
+                showNextImage();
+            }
+        });
+    </script>
+</body>
+</html> 

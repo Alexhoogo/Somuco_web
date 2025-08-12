@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>尼龙产品 - 东莞索慕克贸易有限公司</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .product-gallery {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .gallery-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item-info {
+            padding: 20px;
+        }
+        
+        .gallery-item-info h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+        }
+        
+        .back-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        /* 图片模态框 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content {
+            position: relative;
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90%;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: zoomIn 0.3s ease;
+        }
+        
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { transform: translateY(-50%) scale(0.8); }
+            to { transform: translateY(-50%) scale(1); }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="somuco.ico" alt="东莞索慕克贸易有限公司" style="width: 40px; height: 40px; margin-right: 10px;">
+                <div class="company-names">
+                    <h2>东莞索慕克贸易有限公司</h2>
+                    <span class="company-english">DONGGUAN SOMUCO TRADING LTD</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="index.html" data-lang-zh="首页" data-lang-en="Home">首页</a></li>
+                    <li><a href="products.html" data-lang-zh="产品" data-lang-en="Products">产品</a></li>
+                    <li><a href="about.html" data-lang-zh="关于我们" data-lang-en="About">关于我们</a></li>
+                    <li><a href="contact.html" data-lang-zh="联系我们" data-lang-en="Contact">联系我们</a></li>
+                </ul>
+                <button id="lang-toggle" class="lang-btn">EN</button>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 产品展示 -->
+    <section class="product-gallery">
+        <div class="container">
+            <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+                <span data-lang-zh="返回首页" data-lang-en="Back to Home">返回首页</span>
+            </a>
+            
+            <h1 data-lang-zh="尼龙产品系列" data-lang-en="Nylon Products Series">尼龙产品系列</h1>
+            <p style="text-align: center; color: #7f8c8d; margin-bottom: 50px;" data-lang-zh="耐用尼龙材料，品质保证，提供多种规格和颜色选择" data-lang-en="Durable nylon material, quality guaranteed, providing various specifications and color options">
+                耐用尼龙材料，品质保证，提供多种规格和颜色选择
+            </p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon1.jpg" alt="尼龙产品1" onclick="openModal(this.src, '尼龙 - 1', 'Nylon - 1')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 1" data-lang-en="Nylon - 1">尼龙 - 1</h3>
+                        <p data-lang-zh="高品质尼龙材料，耐用性强" data-lang-en="High-quality nylon material, strong durability">高品质尼龙材料，耐用性强</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon2.jpg" alt="尼龙产品2" onclick="openModal(this.src, '尼龙 - 2', 'Nylon - 2')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 2" data-lang-en="Nylon - 2">尼龙 - 2</h3>
+                        <p data-lang-zh="优质尼龙材质，手感舒适" data-lang-en="Quality nylon material, comfortable feel">优质尼龙材质，手感舒适</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon3.jpg" alt="尼龙产品3" onclick="openModal(this.src, '尼龙 - 3', 'Nylon - 3')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 3" data-lang-en="Nylon - 3">尼龙 - 3</h3>
+                        <p data-lang-zh="专业尼龙材料，应用广泛" data-lang-en="Professional nylon material, wide application">专业尼龙材料，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon4.jpg" alt="尼龙产品4" onclick="openModal(this.src, '尼龙 - 4', 'Nylon - 4')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 4" data-lang-en="Nylon - 4">尼龙 - 4</h3>
+                        <p data-lang-zh="高密度尼龙，品质卓越" data-lang-en="High-density nylon, excellent quality">高密度尼龙，品质卓越</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon5.jpg" alt="尼龙产品5" onclick="openModal(this.src, '尼龙 - 5', 'Nylon - 5')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 5" data-lang-en="Nylon - 5">尼龙 - 5</h3>
+                        <p data-lang-zh="优质尼龙，应用广泛" data-lang-en="Quality nylon，wide application">优质尼龙，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon6.jpg" alt="尼龙产品6" onclick="openModal(this.src, '尼龙 - 6', 'Nylon - 6')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 6" data-lang-en="Nylon - 6">尼龙 - 6</h3>
+                        <p data-lang-zh="专业尼龙，品质卓越" data-lang-en="Professional nylon，excellent quality">专业尼龙，品质卓越</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon7.jpg" alt="尼龙产品7" onclick="openModal(this.src, '尼龙 - 7', 'Nylon - 7')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 7" data-lang-en="Nylon - 7">尼龙 - 7</h3>
+                        <p data-lang-zh="高密度尼龙，耐用性强" data-lang-en="High-density nylon，strong durability">高密度尼龙，耐用性强</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon8.jpg" alt="尼龙产品8" onclick="openModal(this.src, '尼龙 - 8', 'Nylon - 8')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 8" data-lang-en="Nylon - 8">尼龙 - 8</h3>
+                        <p data-lang-zh="优质尼龙，手感舒适" data-lang-en="Quality nylon，comfortable feel">优质尼龙，手感舒适</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon9.jpg" alt="尼龙产品9" onclick="openModal(this.src, '尼龙 - 9', 'Nylon - 9')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 9" data-lang-en="Nylon - 9">尼龙 - 9</h3>
+                        <p data-lang-zh="专业尼龙，应用广泛" data-lang-en="Professional nylon，wide application">专业尼龙，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon10.jpg" alt="尼龙产品10" onclick="openModal(this.src, '尼龙 - 10', 'Nylon - 10')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 10" data-lang-en="Nylon - 10">尼龙 - 10</h3>
+                        <p data-lang-zh="高密度尼龙，品质卓越" data-lang-en="High-density nylon，excellent quality">高密度尼龙，品质卓越</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon11.jpg" alt="尼龙产品11" onclick="openModal(this.src, '尼龙 - 11', 'Nylon - 11')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 11" data-lang-en="Nylon - 11">尼龙 - 11</h3>
+                        <p data-lang-zh="优质尼龙，耐用性强" data-lang-en="Quality nylon，strong durability">优质尼龙，耐用性强</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon12.jpg" alt="尼龙产品12" onclick="openModal(this.src, '尼龙 - 12', 'Nylon - 12')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 12" data-lang-en="Nylon - 12">尼龙 - 12</h3>
+                        <p data-lang-zh="专业尼龙，手感舒适" data-lang-en="Professional nylon，comfortable feel">专业尼龙，手感舒适</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon13.jpg" alt="尼龙产品13" onclick="openModal(this.src, '尼龙 - 13', 'Nylon - 13')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 13" data-lang-en="Nylon - 13">尼龙 - 13</h3>
+                        <p data-lang-zh="高密度尼龙，应用广泛" data-lang-en="High-density nylon，wide application">高密度尼龙，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon14.jpg" alt="尼龙产品14" onclick="openModal(this.src, '尼龙 - 14', 'Nylon - 14')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 14" data-lang-en="Nylon - 14">尼龙 - 14</h3>
+                        <p data-lang-zh="优质尼龙，品质卓越" data-lang-en="Quality nylon，excellent quality">优质尼龙，品质卓越</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon15.png" alt="尼龙产品15" onclick="openModal(this.src, '尼龙 - 15', 'Nylon - 15')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 15" data-lang-en="Nylon - 15">尼龙 - 15</h3>
+                        <p data-lang-zh="专业尼龙，耐用性强" data-lang-en="Professional nylon，strong durability">专业尼龙，耐用性强</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon16.jpg" alt="尼龙产品16" onclick="openModal(this.src, '尼龙 - 16', 'Nylon - 16')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 16" data-lang-en="Nylon - 16">尼龙 - 16</h3>
+                        <p data-lang-zh="高密度尼龙，手感舒适" data-lang-en="High-density nylon, comfortable feel">高密度尼龙，手感舒适</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon17.jpg" alt="尼龙产品17" onclick="openModal(this.src, '尼龙 - 17', 'Nylon - 17')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 17" data-lang-en="Nylon - 17">尼龙 - 17</h3>
+                        <p data-lang-zh="优质尼龙，应用广泛" data-lang-en="Quality nylon，wide application">优质尼龙，应用广泛</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="尼龙素材/nylon18.jpg" alt="尼龙产品18" onclick="openModal(this.src, '尼龙 - 18', 'Nylon - 18')">
+                    <div class="gallery-item-info">
+                        <h3 data-lang-zh="尼龙 - 18" data-lang-en="Nylon - 18">尼龙 - 18</h3>
+                        <p data-lang-zh="专业尼龙，品质卓越" data-lang-en="Professional nylon，excellent quality">专业尼龙，品质卓越</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-lang-zh="东莞索慕克贸易有限公司" data-lang-en="Dongguan Somuco Trading Co., Ltd.">东莞索慕克贸易有限公司</h3>
+                    <p data-lang-zh="专业的箱包鞋材辅料产品供应商。" data-lang-en="Professional bag and shoe material accessories supplier, providing you with quality products and services.">专业的箱包鞋材辅料产品供应商。</p>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-zh="产品分类" data-lang-en="Product Categories">产品分类</h4>
+                    <ul>
+                        <li><a href="microfiber-products.html" data-lang-zh="超纤产品" data-lang-en="Microfiber Products">超纤产品</a></li>
+                        <li><a href="nylon-products.html" data-lang-zh="尼龙产品" data-lang-en="Nylon Products">尼龙产品</a></li>
+                        <li><a href="leather-products.html" data-lang-zh="皮糠纸产品" data-lang-en="Bonded Leather Products">皮糠纸产品</a></li>
+                        <li><a href="nonwoven-products.html" data-lang-zh="不织布产品" data-lang-en="Non-woven Products">不织布产品</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-zh="快速链接" data-lang-en="Quick Links">快速链接</h4>
+                    <ul>
+                        <li><a href="index.html" data-lang-zh="首页" data-lang-en="Home">首页</a></li>
+                        <li><a href="products.html" data-lang-zh="产品" data-lang-en="Products">产品</a></li>
+                        <li><a href="about.html" data-lang-zh="关于我们" data-lang-en="About">关于我们</a></li>
+                        <li><a href="contact.html" data-lang-zh="联系我们" data-lang-en="Contact">联系我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 data-lang-zh="关注我们" data-lang-en="Follow Us">关注我们</h4>
+                    <div class="social-links">
+                        <a href="#" title="微信"><i class="fab fa-weixin"></i></a>
+                        <a href="#" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p data-lang-zh="&copy; 2025 东莞索慕克贸易有限公司. 保留所有权利。" data-lang-en="&copy; 2025 Dongguan Somuco Trading Co., Ltd. All rights reserved.">&copy; 2025 东莞索慕克贸易有限公司. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 图片模态框 -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+            <div class="modal-nav">
+                <button class="modal-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="modal-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 图片模态框功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const closeBtn = document.querySelector('.close');
+            
+            // 为所有产品图片添加点击事件
+            document.querySelectorAll('.gallery-item img').forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    modalImg.src = this.src;
+                    modalImg.alt = this.alt;
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+            
+            // 关闭模态框事件
+            closeBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // ESC键关闭
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html> 
