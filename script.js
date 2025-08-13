@@ -13,6 +13,9 @@ function updateLanguage() {
         langToggle.textContent = currentLang === 'zh' ? 'EN' : '中文';
     }
     
+    // 更新页面标题
+    updatePageTitle();
+    
     // 更新所有带有data-lang属性的元素
     const elements = document.querySelectorAll('[data-lang-zh][data-lang-en]');
     elements.forEach(element => {
@@ -23,6 +26,84 @@ function updateLanguage() {
             element.textContent = text;
         }
     });
+}
+
+function updatePageTitle() {
+    const titleElement = document.querySelector('title');
+    if (titleElement) {
+        const currentTitle = titleElement.textContent;
+        const newTitle = getTranslatedTitle(currentTitle);
+        titleElement.textContent = newTitle;
+    }
+}
+
+function getTranslatedTitle(currentTitle) {
+    const titleMappings = {
+        // 主页
+        'Dongguan Somuco Trading Co., Ltd. - Professional Bag and Shoe Material Accessories Supplier': {
+            zh: '东莞索慕克贸易有限公司 - 专业的箱包鞋材辅料产品供应商',
+            en: 'Dongguan Somuco Trading Co., Ltd. - Professional Bag and Shoe Material Accessories Supplier'
+        },
+        // 产品分类页面
+        '产品分类 - 东莞索慕克贸易有限公司': {
+            zh: '产品分类 - 东莞索慕克贸易有限公司',
+            en: 'Product Categories - Dongguan Somuco Trading Co., Ltd.'
+        },
+        // 关于我们
+        '关于我们 - 东莞索慕克贸易有限公司': {
+            zh: '关于我们 - 东莞索慕克贸易有限公司',
+            en: 'About Us - Dongguan Somuco Trading Co., Ltd.'
+        },
+        // 联系我们
+        '联系我们 - 东莞索慕克贸易有限公司': {
+            zh: '联系我们 - 东莞索慕克贸易有限公司',
+            en: 'Contact Us - Dongguan Somuco Trading Co., Ltd.'
+        },
+        // 产品页面
+        '超纤产品 - 东莞索慕克贸易有限公司': {
+            zh: '超纤产品 - 东莞索慕克贸易有限公司',
+            en: 'Microfiber Products - Dongguan Somuco Trading Co., Ltd.'
+        },
+        '尼龙产品 - 东莞索慕克贸易有限公司': {
+            zh: '尼龙产品 - 东莞索慕克贸易有限公司',
+            en: 'Nylon Products - Dongguan Somuco Trading Co., Ltd.'
+        },
+        '皮糠纸产品 - 东莞索慕克贸易有限公司': {
+            zh: '皮糠纸产品 - 东莞索慕克贸易有限公司',
+            en: 'Bonded Leather Products - Dongguan Somuco Trading Co., Ltd.'
+        },
+        '不织布产品 - 东莞索慕克贸易有限公司': {
+            zh: '不织布产品 - 东莞索慕克贸易有限公司',
+            en: 'Non-woven Products - Dongguan Somuco Trading Co., Ltd.'
+        },
+        '编织产品 - 东莞索慕克贸易有限公司': {
+            zh: '编织产品 - 东莞索慕克贸易有限公司',
+            en: 'Raffia Fabric Products - Dongguan Somuco Trading Co., Ltd.'
+        },
+        'PU产品 - 东莞索慕克贸易有限公司': {
+            zh: 'PU产品 - 东莞索慕克贸易有限公司',
+            en: 'PU Products - Dongguan Somuco Trading Co., Ltd.'
+        },
+        '拉链产品 - 东莞索慕克贸易有限公司': {
+            zh: '拉链产品 - 东莞索慕克贸易有限公司',
+            en: 'Zipper Products - Dongguan Somuco Trading Co., Ltd.'
+        },
+        '珠链产品 - SOHO外贸产品供应商': {
+            zh: '珠链产品 - 东莞索慕克贸易有限公司',
+            en: 'Ball Chain Products - Dongguan Somuco Trading Co., Ltd.'
+        },
+        '饰品产品 - SOHO外贸产品供应商': {
+            zh: '饰品产品 - 东莞索慕克贸易有限公司',
+            en: 'Accessories Products - Dongguan Somuco Trading Co., Ltd.'
+        }
+    };
+    
+    const mapping = titleMappings[currentTitle];
+    if (mapping) {
+        return mapping[currentLang];
+    }
+    
+    return currentTitle; // 如果没有找到映射，返回原标题
 }
 
 // 主页轮播图功能

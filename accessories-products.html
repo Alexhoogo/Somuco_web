@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>饰品产品 - SOHO外贸产品供应商</title>
+    <link rel="icon" href="somuco.ico" type="image/x-icon">
+    <title>Accessories Products - Dongguan Somuco Trading Co., Ltd.</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .product-gallery {
-            padding: 80px 0;
+            padding: 120px 0 80px 0;
             background: #f8f9fa;
         }
         
@@ -78,10 +79,10 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="somuco.ico" alt="东莞索慕克贸易有限公司" style="width: 40px; height: 40px; margin-right: 10px;">
+                <img src="somuco.ico" alt="东莞索慕克贸易有限公司">
                 <div class="company-names">
-                    <h2>东莞索慕克贸易有限公司</h2>
-                    <span class="company-english">DONGGUAN SOMUCO TRADING LTD</span>
+                    <h2 data-lang-zh="东莞索慕克贸易有限公司" data-lang-en="Dongguan Somuco Trading Co., Ltd.">Dongguan Somuco Trading Co., Ltd.</h2>
+                    <span class="company-english" data-lang-zh="Dongguan Somuco Trading Co., Ltd." data-lang-en="ANDIAMO INTERNATIONAL HK LIMITED">ANDIAMO INTERNATIONAL HK LIMITED</span>
                 </div>
             </div>
             <div class="nav-right">
@@ -91,7 +92,7 @@
                     <li><a href="about.html" data-lang-zh="关于我们" data-lang-en="About">关于我们</a></li>
                     <li><a href="contact.html" data-lang-zh="联系我们" data-lang-en="Contact">联系我们</a></li>
                 </ul>
-                <button id="lang-toggle" class="lang-btn">EN</button>
+                <button id="lang-toggle" class="lang-btn">中文</button>
             </div>
             <div class="nav-toggle">
                 <span></span>
@@ -104,13 +105,10 @@
     <!-- 产品展示 -->
     <section class="product-gallery">
         <div class="container">
-            <a href="index.html" class="back-btn">
-                <i class="fas fa-arrow-left"></i>
-                <span data-lang-zh="返回首页" data-lang-en="Back to Home">返回首页</span>
-            </a>
+
             
             <h1 data-lang-zh="饰品产品系列" data-lang-en="Accessories Products Series">饰品产品系列</h1>
-            <p style="text-align: center; color: #7f8c8d; margin-bottom: 50px;" data-lang-zh="精美饰品，时尚潮流，提供多种规格和颜色选择" data-lang-en="Exquisite accessories, fashionable trends, providing various specifications and color options">
+            <p style="text-align: left; color: #7f8c8d; margin-bottom: 50px;" data-lang-zh="精美饰品，时尚潮流，提供多种规格和颜色选择" data-lang-en="Exquisite accessories, fashionable trends, providing various specifications and color options">
                 精美饰品，时尚潮流，提供多种规格和颜色选择
             </p>
             
@@ -335,6 +333,18 @@
             </div>
         </div>
     </footer>
+
+    <!-- 图片模态框 -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+        </div>
+        <div class="modal-nav">
+            <button class="modal-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="modal-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
     <script>

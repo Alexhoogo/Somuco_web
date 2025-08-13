@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>超纤产品 - 东莞索慕克贸易有限公司</title>
+    <title>Microfiber Products - Dongguan Somuco Trading Co., Ltd.</title>
     <link rel="icon" href="somuco.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         .product-gallery {
-            padding: 80px 0;
+            padding: 120px 0 80px 0;
             background: #f8f9fa;
         }
         
@@ -58,19 +58,39 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 25px;
+            padding: 0 16px;
+            height: 1.5em;
             background: #3498db;
             color: white;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 0.75em;
             font-weight: 500;
             transition: all 0.3s ease;
-            margin-bottom: 30px;
+            white-space: nowrap;
+            font-size: 14px;
+            line-height: 1;
         }
         
         .back-btn:hover {
             background: #2980b9;
             transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .back-btn {
+                padding: 0 12px;
+                height: 1.5em;
+                font-size: 12px;
+                line-height: 1;
+            }
+            
+            .back-btn span {
+                display: none;
+            }
+            
+            .back-btn i {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -79,9 +99,9 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <img src="somuco.ico" alt="东莞索慕克贸易有限公司" style="width: 40px; height: 40px; margin-right: 10px;">
+                <img src="somuco.ico" alt="东莞索慕克贸易有限公司">
                 <div class="company-names">
-                    <h2>东莞索慕克贸易有限公司</h2>
+                    <h2 data-lang-zh="东莞索慕克贸易有限公司" data-lang-en="Dongguan Somuco Trading Co., Ltd.">Dongguan Somuco Trading Co., Ltd.</h2>
                     <span class="company-english">DONGGUAN SOMUCO TRADING LTD</span>
                 </div>
             </div>
@@ -92,7 +112,7 @@
                     <li><a href="about.html" data-lang-zh="关于我们" data-lang-en="About">关于我们</a></li>
                     <li><a href="contact.html" data-lang-zh="联系我们" data-lang-en="Contact">联系我们</a></li>
                 </ul>
-                <button id="lang-toggle" class="lang-btn">EN</button>
+                <button id="lang-toggle" class="lang-btn">中文</button>
             </div>
             <div class="nav-toggle">
                 <span></span>
@@ -105,13 +125,10 @@
     <!-- 产品展示 -->
     <section class="product-gallery">
         <div class="container">
-            <a href="index.html" class="back-btn">
-                <i class="fas fa-arrow-left"></i>
-                <span data-lang-zh="返回首页" data-lang-en="Back to Home">返回首页</span>
-            </a>
+
             
             <h1 data-lang-zh="超纤产品系列" data-lang-en="Microfiber Products Series">超纤产品系列</h1>
-            <p style="text-align: center; color: #7f8c8d; margin-bottom: 50px;" data-lang-zh="超细纤维，品质卓越，提供多种规格和颜色选择" data-lang-en="Ultra-fine fiber, excellent quality, providing various specifications and color options">
+            <p style="text-align: left; color: #7f8c8d; margin-bottom: 50px;" data-lang-zh="超细纤维，品质卓越，提供多种规格和颜色选择" data-lang-en="Ultra-fine fiber, excellent quality, providing various specifications and color options">
                 超细纤维，品质卓越，提供多种规格和颜色选择
             </p>
             
@@ -334,10 +351,10 @@
         <span class="close">&times;</span>
         <div class="modal-content">
             <img id="modalImage" src="" alt="">
-            <div class="modal-nav">
-                <button class="modal-prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="modal-next"><i class="fas fa-chevron-right"></i></button>
-            </div>
+        </div>
+        <div class="modal-nav">
+            <button class="modal-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="modal-next"><i class="fas fa-chevron-right"></i></button>
         </div>
     </div>
 
